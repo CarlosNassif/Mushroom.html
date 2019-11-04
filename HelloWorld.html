@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale= 3.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<meta name = "author" content = "Carlos Alberto Nassif">
+		<title>Meu Primeiro App em React</title>
+		<script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+		<script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>  
+		<script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script> 
+	</head>
+	<body>
+		<div id="root"></div>
+		<div id="grupo"></div>
+		<div id="state1"><h1></h1></div>
+		<script text/babel>
+		class MFRA extends React.Component{
+			render(){
+				return React.createElement("h1", {className: "title"}, "My first React App!");
+			}
+		}
+		class IntegrantesGrupo extends React.Component {
+			state = {
+				Nome: "Carlin",
+				Curso: "Ciência da Computação"
+			}
+			render() {
+				return React.createElement("ul", null,
+					React.createElement("li", null,"Joao"),
+					React.createElement("li",null,this.state.Nome," ", this.state.Curso)
+				);
+			}
+		}
+		
+		ReactDOM.render(
+			React.createElement(IntegrantesGrupo),
+			document.getElementById("grupo")
+		);
+		ReactDOM.render(
+			React.createElement(MFRA),
+			document.getElementById('root')
+		);</script>
+		
+		
+	</body>
+</html>
